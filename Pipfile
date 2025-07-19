@@ -4,6 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+phonenumbers = "*"
+django-phonenumber-field = "*"
 
 [dev-packages]
 

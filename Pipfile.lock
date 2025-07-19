@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "494d5b4f482f0ef471f49afe28f00ec1a2ff75da2ce65060d8cabaeb3da2f100"
+            "sha256": "c654b89c1beffa98c731deafbbf254cd5e3308336725239ab3d6988336044846"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -15,6 +15,56 @@
             }
         ]
     },
-    "default": {},
+    "default": {
+        "asgiref": {
+            "hashes": [
+                "sha256:a5ab6582236218e5ef1648f242fd9f10626cfd4de8dc377db215d5d5098e3142",
+                "sha256:f3bba7092a48005b5f5bacd747d36ee4a5a61f4a269a6df590b43144355ebd2c"
+            ],
+            "markers": "python_version >= '3.9'",
+            "version": "==3.9.1"
+        },
+        "django": {
+            "hashes": [
+                "sha256:60c35bd96201b10c6e7a78121bd0da51084733efa303cc19ead021ab179cef5e",
+                "sha256:a1228c384f8fa13eebc015196db7b3e08722c5058d4758d20cb287503a540d8f"
+            ],
+            "markers": "python_version >= '3.10'",
+            "version": "==5.2.4"
+        },
+        "django-phonenumber-field": {
+            "hashes": [
+                "sha256:9ba66873bf47401b13fc57797fbf85e785864a6bfdc8b9daa3a9012886567045",
+                "sha256:f19450625574ad3a2de047c409527d0e57699496849e71e53b53e8679ff67b27"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.9'",
+            "version": "==8.1.0"
+        },
+        "phonenumbers": {
+            "hashes": [
+                "sha256:13b12d269be1f2b363c9bc2868656a7e2e8b50f1a1cef629c75005da6c374c6b",
+                "sha256:c2d15a6a9d0534b14a7764f51246ada99563e263f65b80b0251d1a760ac4a1ba"
+            ],
+            "index": "pypi",
+            "version": "==9.0.10"
+        },
+        "sqlparse": {
+            "hashes": [
+                "sha256:09f67787f56a0b16ecdbde1bfc7f5d9c3371ca683cfeaa8e6ff60b4807ec9272",
+                "sha256:cf2196ed3418f3ba5de6af7e82c694a9fbdbfecccdfc72e281548517081f16ca"
+            ],
+            "markers": "python_version >= '3.8'",
+            "version": "==0.5.3"
+        },
+        "tzdata": {
+            "hashes": [
+                "sha256:1a403fada01ff9221ca8044d701868fa132215d84beb92242d9acd2147f667a8",
+                "sha256:b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
+            ],
+            "markers": "python_version >= '2'",
+            "version": "==2025.2"
+        }
+    },
     "develop": {}
 }
