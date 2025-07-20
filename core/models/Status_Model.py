@@ -6,3 +6,9 @@ class StatusModel(models.TextChoices):
     PENDING = 'Pending'
     REJECTED = 'Rejected'
     APPROVED = 'Approved'
+
+class AttandanceStatus(models.TextChoices):
+    PRESENT = 'Present'
+    ABSENT = 'Absent'
+    LATE = 'Late'
+    ON_LEAVE = 'On Leave'
