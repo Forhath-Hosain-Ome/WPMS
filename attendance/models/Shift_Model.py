@@ -1,7 +1,7 @@
 from django.db import models
 
 class ShiftModel(models.Model):
-    shift_name = models.CharField(max_length=20)
+    shift_name = models.CharField(max_length=20, unique=True)
     start_time = models.TimeField()
     end_time = models.TimeField()
     break_duration = models.DurationField(help_text="Duration of breaks (e.g., 00:30:00 for 30 minutes)")

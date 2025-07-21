@@ -3,16 +3,16 @@ from workers.models import WorkerModel
 from core.models import StatusModel
 
 class PayrollModel(models.Model):
-    worker = models.ForeignKey(WorkerModel, on_delete=models.CASCADE)
+    worker = models.ForeignKey(WorkerModel, on_delete=models.SET_NULL)
     pay_period_start = models.DateField()
     pay_period_end = models.DateField()
     base_salary = models.DecimalField(max_digits=6, decimal_places=2)
     overtime_hour = models.DurationField()
-    overtime_pay = models.DecimalField(max_digits=6, decimal_places=2)
-    deductions = models.DecimalField(max_digits=6, decimal_places=2)
-    net_sallary = models.DecimalField(max_digits=6, decimal_places=2)
+    overtime_pay = models.DecimalField(max_digits=6, decimal_places=2, default=0)
+    deductions = models.DecimalField(max_digits=6, decimal_places=2, default=0)
+    net_sallary = models.DecimalField(max_digits=6, decimal_places=2, default=0)
     generated_date = models.DateTimeField(auto_now_add=True)
-    status = models.CharField(choices=StatusModel, max_length=15)
+    status = models.CharField(choices=StatusModel.choices, max_length=15)
 
     class Meta:
         verbose_name = 'Payroll'
