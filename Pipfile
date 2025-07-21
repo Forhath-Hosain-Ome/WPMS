@@ -6,8 +6,10 @@ name = "pypi"
 [packages]
 phonenumbers = "*"
 django-phonenumber-field = "*"
+djangorestframework = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.13"
+#python_version = "3.13"
+python_version = "3.12.1"

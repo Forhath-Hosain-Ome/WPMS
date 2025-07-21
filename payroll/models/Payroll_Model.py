@@ -3,7 +3,7 @@ from workers.models import WorkerModel
 from core.models import StatusModel
 
 class PayrollModel(models.Model):
-    worker = models.ForeignKey(WorkerModel, on_delete=models.SET_NULL)
+    worker = models.ForeignKey(WorkerModel, on_delete=models.SET_NULL, null=True)
     pay_period_start = models.DateField()
     pay_period_end = models.DateField()
     base_salary = models.DecimalField(max_digits=6, decimal_places=2)

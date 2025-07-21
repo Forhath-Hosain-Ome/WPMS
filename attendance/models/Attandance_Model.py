@@ -1,12 +1,12 @@
 from django.db import models
 from workers.models import WorkerModel
-from attendance.models import Shift
+from attendance.models import ShiftModel
 from core.models import AttandanceStatus
 from datetime import timedelta
 
 class Attendance(models.Model):
     worker = models.ForeignKey(WorkerModel, on_delete=models.CASCADE, related_name='attendances')
-    shift = models.ForeignKey(Shift, on_delete=models.CASCADE, related_name='attendances')
+    shift = models.ForeignKey(ShiftModel, on_delete=models.CASCADE, related_name='attendances')
     date = models.DateField(auto_now_add=True) #CHECK AGAIN
     check_in_time = models.DateTimeField()
     check_out_time = models.DateTimeField(null=True, blank=True)
