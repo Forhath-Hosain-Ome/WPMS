@@ -12,3 +12,8 @@ class AttandanceStatus(models.TextChoices):
     ABSENT = 'Absent'
     LATE = 'Late'
     ON_LEAVE = 'On Leave'
+
+class WorkerStatus(models.TextChoices):
+    ACTIVE = 'Active'
+    ON_LEAVE = 'On Leave'
+    TERMINATED = 'Terminated'

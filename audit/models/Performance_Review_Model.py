@@ -3,12 +3,12 @@ from workers.models import WorkerModel
 from accounts.models import UserModel
 
 class PerformanceReviewModel(models.Model):
-    worker = models.OneToOneField(WorkerModel, on_delete=models.CASCADE, related_name='name')
+    worker = models.ForeignKey(WorkerModel, on_delete=models.CASCADE, related_name='name')
     review_date = models.DateField(auto_now=True)
-    reviewed_by = models.OneToOneField(UserModel, on_delete=models.CASCADE)
-    kip_score = models.PositiveBigIntegerField()
+    reviewed_by = models.OneToOneField(UserModel, on_delete=models.CASCADE, limit_choices_to={'role__in': ['ADMIN', 'HR', 'SUPERVISOR']})
+    kpi_score = models.PositiveBigIntegerField()
     comments = models.TextField()
-    overall_ratting = models.DecimalField()
+    overall_rating = models.DecimalField(max_digits=1, decimal_places=1)
 
     def __str__(self):
-        return self.worker
+        return f"Review for {self.worker} on {self.review_date}"
