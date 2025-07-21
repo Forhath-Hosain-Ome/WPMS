@@ -24,13 +24,13 @@ class Attendance(models.Model):
     def worked_hours(self):
         if self.check_in_time and self.check_out_time:
             duration = self.check_in_time - self.check_out_time
-            return duration.seconds()/3600
+            return duration.seconds/3600
         return 0
     @property
     def payable_hours(self):
         if self.shift:
-            break_hours = self.shift.break_duration.seconds()/3600
-            return max(self.worked_hours - self.break_hours, 0)
+            break_hours = self.shift.break_duration.seconds/3600
+            return max(self.worked_hours - break_hours, 0)
         return self.worked_hours
     @property
     def overtime_hours(self):
@@ -47,8 +47,8 @@ class Attendance(models.Model):
         if self.shift.end_time < self.shift.start_time:
             scheduled_end += timedelta(days=1)
 
-        if self.check_out_time <= scheduled_end:
+        if self.check_out_time is not None and self.check_out_time <= scheduled_end:
             return 0
-
-        overtime = self.check_out_time - scheduled_end
-        return round(overtime.total_seconds() / 3600, 2)
+        if self.check_out_time is not None:
+            overtime = self.check_out_time - scheduled_end
+            return round(overtime.total_seconds() / 3600, 2)
