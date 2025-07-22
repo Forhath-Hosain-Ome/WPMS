@@ -3,6 +3,7 @@ from workers.models import WorkerModel
 from attendance.models import ShiftModel
 from core.models import AttandanceStatus
 from datetime import timedelta
+from core.managers import AttendanceManager
 
 class Attendance(models.Model):
     worker = models.ForeignKey(WorkerModel, on_delete=models.CASCADE, related_name='attendances')
@@ -12,10 +13,14 @@ class Attendance(models.Model):
     check_out_time = models.DateTimeField(null=True, blank=True)
     status = models.CharField(choices=AttandanceStatus, max_length=10)
 
+    reports = AttendanceManager()
+    
+
     class Meta:
         verbose_name = 'Attendance'
         verbose_name_plural = 'Attendances'
         ordering = ['-date']
+        unique_together = ('worker', 'shift', 'date')
 
     def __str__(self):
         return f"{self.worker} - {self.date} - {self.status}"
