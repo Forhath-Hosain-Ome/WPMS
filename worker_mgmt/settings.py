@@ -29,13 +29,8 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'rest_framework',
 
+    'navigation.apps.NavigationConfig'
 
-    'accounts.apps.AccountsConfig',
-    'attendance.apps.AttendanceConfig',
-    'payroll.apps.PayrollConfig',
-    'workers.apps.WorkersConfig',
-    'audit.apps.AuditConfig',
-    'core.apps.CoreConfig',
 ]
 
 MIDDLEWARE = [
@@ -53,7 +48,7 @@ ROOT_URLCONF = 'worker_mgmt.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -64,6 +59,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'worker_mgmt.wsgi.application'
 
@@ -120,4 +117,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'accounts.UserModel'
+# AUTH_USER_MODEL = 'accounts.UserModel'
