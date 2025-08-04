@@ -16,6 +16,8 @@ Commit and push fly.toml to your GitHub repo (if using GitHub integration).
 
 -From local: run
 fly deploy
+fly deploy --local-only
+
 
 
 

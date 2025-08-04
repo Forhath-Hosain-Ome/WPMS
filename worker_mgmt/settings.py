@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-4%!sp-+*017(5ye+4-m&q3tq#do^_zi@-k$1-&qck1rr7%sk7^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['wpms-falling-sunset-727.fly.dev']
 
 
 # Application definition
